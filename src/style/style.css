@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.profile-image{
+    height: 30px;
+}
+svg{
+    height: 25px;
+    width: 25px;
+}
