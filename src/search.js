@@ -63,7 +63,38 @@ function Search(){
                         </div>
                     </div>
                 </div>
+                <div className="main-center">
+                    <div className="buttons">
+                        <a href="#">Google Qidiruvi</a>
+                        <a href="#">Omadingizni sinang</a>
+                    </div>
+                    
+                </div>
             </main>
+            <footer>
+            
+                <div className="footer">
+                <div className="langs">
+                        <p>Google xizmatlari quyidagi tillarda taqdim etiladi: <a href="https://www.google.com/setprefs?sig=0_zN4LvzR1XbgFn3B3mA_kKBoTqmQ%3D&hl=ru&source=homepage&sa=X&ved=0ahUKEwjt9qaj7NT1AhXq7rsIHT0sCHcQ2ZgBCBA">русский</a><a href="https://www.google.com/setprefs?sig=0_zN4LvzR1XbgFn3B3mA_kKBoTqmQ%3D&hl=en&source=homepage&sa=X&ved=0ahUKEwjt9qaj7NT1AhXq7rsIHT0sCHcQ2ZgBCBE">English</a></p>
+                    </div>
+                    <div className="footer-country">
+                        O'zbekiston
+                    </div>
+                    <div className="copyright">
+                        <div className="left-contents">
+                            <a href="https://about.google/?utm_source=google-UZ&utm_medium=referral&utm_campaign=hp-footer&fg=1">Google haqida</a>
+                            <a href="https://www.google.com/intl/uz_uz/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1">Reklama</a>
+                            <a href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1">Biznes</a>
+                            <a href="https://google.com/search/howsearchworks/?fg=1">Qidiruv qanday ishlaydi</a>
+                        </div>
+                        <div className="right-contents">
+                            <a href="https://policies.google.com/privacy?hl=uz&fg=1">Maxfiylik</a>
+                            <a href="https://policies.google.com/terms?hl=uz&fg=1">Shartlar</a>
+                            <a href="#">Sozlamalar</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </>
     )
 }

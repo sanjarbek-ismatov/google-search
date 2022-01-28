@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+html,body{
+    height: 100%;
+    margin: 0;
+}
 .profile-image{
     border-radius: 50%;
     height: 33px;
@@ -44,9 +48,10 @@ main{
     width: 100%;
 }
 .main-input-in{
-    width: 584px;
     margin: auto;
     padding-top: 23px;
+    max-width: 584px;
+    display: flex;
 }
 .input{
     width: 100%;
@@ -64,7 +69,7 @@ input{
     font-size: 15px;
 }
 .searchIcon{
-    height: 22px;
+    height: 24px;
     opacity: 0.4;
     margin: 0 15px;
 }
@@ -78,4 +83,84 @@ input{
     opacity: 0.5;
     padding-right: 10px;
     border-right: 1px solid #b4b4b4;
+}
+.main-center{
+    margin-top: 41px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.buttons{
+    max-width: 600px;
+    margin: auto;
+}
+.buttons a{
+    border: 1px solid #fff;
+    text-decoration: none;
+    color: #1d1d1d;
+    padding: 9px 10px;
+    font-size: 14px;
+    margin: 0 10px;
+}
+.buttons a:hover{
+    background-color: #ececec;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+}
+.langs{
+    text-align: center;
+    margin-top: 32px;
+    font-size: 13px;
+    color: #646363;
+    height: 34vh;
+}
+.langs a{
+    margin: 0 5px;
+    text-decoration: none;
+
+}
+.langs a:hover{
+    text-decoration: underline;
+
+}
+footer{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer-country{
+    color: #696969;
+    padding: 10px  28px;
+}
+.copyright{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #dadce0;
+    padding: 9px 20px;
+    flex-wrap: wrap;
+}
+.right-contents, .left-contents{
+    padding-top: 8px;
+}
+.right-contents a, .left-contents a{
+    margin: 0 12px;
+    text-decoration: none;
+    color: #696969;
+}
+.right-contents a:hover, .left-contents a:hover{
+    text-decoration: underline;
+}
+@media only screen and (max-width: 750px){
+    .copyright{
+        justify-content: center;
+    }
+    .left-contents, .right-contents{
+        line-height: 40px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .left-contents{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
