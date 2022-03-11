@@ -1,18 +1,5 @@
-import React,{useEffect, useState} from "react";
-function Google(props){
-    function fetchData(){
-        const CONTEXT_KEY = '344518b235096fb90';
-        const API_KEY = 'AIzaSyBbFGoK91L85xUu9ONymejA1ecQPAVN8gM';
-        let url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${text}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => console.log(data))
-        }
-    const [text, setText] = useState(props);
-    return(
-        <>
-            <input type='text' value={text} />
-        </>
-    )
+import React, { useEffect, useState } from "react";
+function Google() {
+  return <h1> Hello</h1>;
 }
 export default Google;
