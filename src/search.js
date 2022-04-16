@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FetchFunc } from "./searchComponent/fetch";
+import { useNavigate } from "react-router-dom";
 import "./style/style.css";
 import Profile from "./images/profile.jpg";
 import Logo from "./images/logo.png";
 import Tia from "./images/tia.png";
-import Google from "./searchComponent/google";
-import Input from "./searchComponent/input";
-function Search() {
-  const [text, setText] = useState();
-  useEffect(() => {
-    console.log(text);
-  });
 
+function Search() {
+  const [text, setText] = useState("");
+  const history = useNavigate();
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/search" element={<Google />} />
-        </Routes>
-      </BrowserRouter>
       <header>
         <div className="header">
           <div className="header-nav">
@@ -51,8 +43,24 @@ function Search() {
                 <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
               </svg>
 
-              <Input text={text} setText={setText} />
+              <input
+                type="text"
+                value={text}
+                onChange={(e) => {
+                  setText(e.target.value);
+                }}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter" && e.target.value) {
+                    history("/search");
+                    FetchFunc();
+                    // `https://www.googleapis.com/customsearch/v1?key=AIzaSyBbFGoK91L85xUu9ONymejA1ecQPAVN8gM&cx=344518b235096fb90&q=${text}`
+                    // eslint-disable-next-line no-unused-expressions
+                    `https://www.googleapis.com/customsearch/v1?key=AIzaSyAFjOM6FuYQElINKCSITwvWmj0Mw5oA0ik&cx=344518b235096fb90&q=ok`;
+                  }
+                }}
+              />
 
+              {/*eslint-disable-next-line jsx-a11y/alt-text*/}
               <img src={Tia} />
               <svg
                 className="voice"
