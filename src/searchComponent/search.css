@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: arial, Helvetica, sans-serif;
+}
+
+.objects {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.displayLink {
+  text-decoration: none;
+  color: #303030;
+  font-size: 13px;
+}
+.link {
+  font-size: 22px;
+  text-decoration: none;
+  line-height: 35px;
+  color: #2c2cb1;
+}
+.link:hover,
+.displayLink:hover {
+  text-decoration: underline;
+}
+
+.desc {
+  margin-top: 5px;
+  color: #4d5156;
+  font-size: 15px;
+}
+@media only screen and (max-width: 1000px) {
+  .main {
+    margin: 0 20px;
+    font-size: 17px;
+  }
+  .link {
+    font-size: 23px;
+  }
+}
+
+#button {
+  padding: 7px 25px;
+  color: #fff;
+  background-color: #303030;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+#button:hover,
+#button:active {
+  background-color: #fff;
+  color: #303030;
+  border: 0.1px solid #303030;
+}
+.searchInfo {
+  font-size: 14px;
+  color: #303030;
+  margin-top: 5px;
+}
+.input {
+  width: 100%;
+  border: 1px solid #dfe1e5;
+  border-radius: 30px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+}
+input::-webkit-search-cancel-button {
+  position: relative;
+  right: 20px;
+}
+input {
+  width: 100%;
+  height: 34px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+}
+.searchIcon {
+  height: 24px;
+  opacity: 0.4;
+  margin: 0 15px;
+  color: #4285f4;
+}
+.voice {
+  height: 30px;
+  margin: 0 17px;
+}
+.search-main {
+  max-width: 600px;
+  margin-left: 30px;
+}

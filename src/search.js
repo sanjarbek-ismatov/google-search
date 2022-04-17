@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FetchFunc } from "./searchComponent/fetch";
 import { useNavigate } from "react-router-dom";
 import "./style/style.css";
@@ -9,27 +9,38 @@ import Tia from "./images/tia.png";
 function Search() {
   const [text, setText] = useState("");
   const history = useNavigate();
+  const clear = () => {
+    return <i className="fa-regular fa-x clear"></i>;
+  };
   return (
     <>
       <header>
         <div className="header">
           <div className="header-nav">
-            <a href="https://mail.google.com/mail/&ogbl" target="_blank">
+            <a
+              href="https://mail.google.com/mail/&ogbl"
+              target="_blank"
+              rel="noreferrer"
+            >
               Gmail
             </a>
-            <a href="https://www.google.co.uz/imghp?hl=uz&ogbl" target="_blank">
+            <a
+              href="https://www.google.co.uz/imghp?hl=uz&ogbl"
+              target="_blank"
+              rel="noreferrer"
+            >
               Rasmlar
             </a>
             <svg className="menu">
               <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
             </svg>
-            <img className="profile-image" src={Profile} />
+            <img className="profile-image" src={Profile} alt="profile" />
           </div>
         </div>
       </header>
       <main>
         <div className="logo">
-          <img src={Logo} />
+          <img src={Logo} alt="logo" />
         </div>
         <div className="main-input">
           <div className="main-input-in">
@@ -52,14 +63,13 @@ function Search() {
                 onKeyPress={(e) => {
                   if (e.key === "Enter" && e.target.value) {
                     history("/search");
-                    FetchFunc();
-                    // `https://www.googleapis.com/customsearch/v1?key=AIzaSyBbFGoK91L85xUu9ONymejA1ecQPAVN8gM&cx=344518b235096fb90&q=${text}`
-                    // eslint-disable-next-line no-unused-expressions
-                    `https://www.googleapis.com/customsearch/v1?key=AIzaSyAFjOM6FuYQElINKCSITwvWmj0Mw5oA0ik&cx=344518b235096fb90&q=ok`;
+                    FetchFunc(
+                      `https://www.googleapis.com/customsearch/v1?key=AIzaSyBbFGoK91L85xUu9ONymejA1ecQPAVN8gM&cx=344518b235096fb90&q=${text}`
+                    );
                   }
                 }}
               />
-
+              {text ? clear() : undefined}
               {/*eslint-disable-next-line jsx-a11y/alt-text*/}
               <img src={Tia} />
               <svg
@@ -87,7 +97,9 @@ function Search() {
         </div>
         <div className="main-center">
           <div className="buttons">
+            {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
             <a href="#">Google Qidiruvi</a>
+            {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
             <a href="#">Omadingizni sinang</a>
           </div>
         </div>
@@ -128,6 +140,7 @@ function Search() {
               <a href="https://policies.google.com/terms?hl=uz&fg=1">
                 Shartlar
               </a>
+              {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
               <a href="#">Sozlamalar</a>
             </div>
           </div>
