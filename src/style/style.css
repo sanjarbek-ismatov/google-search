@@ -84,16 +84,16 @@ input {
   margin: 0 17px;
 }
 .clear {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.clear-div {
+  display: flex;
+  align-items: center;
   height: 33px;
   margin: 0 12px 0 8px;
   padding-right: 10px;
-  border-right: 1px solid #b4b4b4;
-  cursor: pointer;
-  opacity: 1;
-  display: flex;
-  align-items: center;
 }
-
 .main-center {
   margin-top: 41px;
   width: 100%;

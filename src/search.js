@@ -10,7 +10,14 @@ function Search() {
   const [text, setText] = useState("");
   const history = useNavigate();
   const clear = () => {
-    return <i className="fa-regular fa-x clear"></i>;
+    return (
+      <i
+        onClick={() => {
+          setText("");
+        }}
+        className="fa-regular fa-x clear"
+      ></i>
+    );
   };
   return (
     <>
@@ -63,13 +70,11 @@ function Search() {
                 onKeyPress={(e) => {
                   if (e.key === "Enter" && e.target.value) {
                     history("/search");
-                    FetchFunc(
-                      `https://www.googleapis.com/customsearch/v1?key=AIzaSyBbFGoK91L85xUu9ONymejA1ecQPAVN8gM&cx=344518b235096fb90&q=${text}`
-                    );
+                    FetchFunc(text);
                   }
                 }}
               />
-              {text ? clear() : undefined}
+              <div className="clear-div">{text ? clear() : undefined}</div>
               {/*eslint-disable-next-line jsx-a11y/alt-text*/}
               <img src={Tia} />
               <svg

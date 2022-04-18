@@ -2,7 +2,7 @@
   "name": "react-router",
   "version": "0.1.0",
   "private": true,
-  "build": "GENERATE_SOURCEMAP=false react-scripts build",
+  "build": "npm run cleanBuild && set \"GENERATE_SOURCEMAP=false\" && react-scripts build ",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",

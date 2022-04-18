@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { temp, FetchFunc } from "./fetch";
+import Logo from "../images/logo.png";
 import Tia from "../images/tia.png";
 import "./search.css";
 function Google() {
@@ -13,12 +14,16 @@ function Google() {
 
     firstData.then((data) => {
       setArray(data);
+      setText(temp);
     });
+    document.title = `${temp} - Google qidiruvi`;
   }, []);
+
   return (
     <>
-      <div className="search-main">
-        <div className="input">
+      <div className="search-header">
+        <img className="logo-search" src={Logo} />
+        <div className="input-search">
           <input
             type="text"
             value={text}
@@ -27,12 +32,10 @@ function Google() {
             }}
             onKeyPress={(e) => {
               if (e.key === "Enter" && e.target.value) {
-                FetchFunc(
-                  `https://www.googleapis.com/customsearch/v1?key=AIzaSyBbFGoK91L85xUu9ONymejA1ecQPAVN8gM&cx=344518b235096fb90&q=${text}`
-                );
-                //
-                // eslint-disable-next-line no-unused-expressions
-                //
+                FetchFunc(text).then((data) => {
+                  setArray(data);
+                  document.title = `${text} - Google qidiruvi`;
+                });
               }
             }}
           />
@@ -60,7 +63,7 @@ function Google() {
             ></path>
           </svg>
           <svg
-            className="searchIcon"
+            className="searchIcon-search"
             focusable="false"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -68,12 +71,13 @@ function Google() {
             <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
           </svg>
         </div>
-        <input type="text" />
+      </div>
+      <div className="search-main">
         {array && (
           <div className="searchInfo">
             <p>
-              About {array.searchInformation.formattedTotalResults} results (
-              {array.searchInformation.formattedSearchTime}s)
+              Taxminan {array.searchInformation.formattedTotalResults} ta natija
+              ({array.searchInformation.formattedSearchTime} soniya)
             </p>
           </div>
         )}
