@@ -22,7 +22,7 @@ function Google() {
   return (
     <>
       <div className="search-header">
-        <img className="logo-search" src={Logo} />
+        <img className="logo-search" src={Logo} alt="logo" />
         <div className="input-search">
           <input
             type="text"
